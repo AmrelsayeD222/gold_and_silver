@@ -10,29 +10,32 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          CustomBotton(
-            width: MediaQuery.of(context).size.width * 0.5,
-            text: AppStrings.gold,
-            onPressed: () {
-              Navigator.pushNamed(context, AppRoutes.gold);
-            },
-            backgroundColor: AppColors.gold,
-            foregroundColor: AppColors.black,
-          ),
-          SizedBox(height: 20),
-          CustomBotton(
-            width: MediaQuery.of(context).size.width * 0.5,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CustomBotton(
+              width: MediaQuery.of(context).size.width * 0.5,
+              text: AppStrings.gold,
+              onPressed: () {
+                Navigator.pushNamed(context, AppRoutes.gold);
+              },
+              backgroundColor: AppColors.gold,
+              foregroundColor: AppColors.black,
+            ),
+            SizedBox(height: 20),
+            CustomBotton(
+              width: MediaQuery.of(context).size.width * 0.5,
 
-            text: AppStrings.silver,
-            onPressed: () {
-              Navigator.pushNamed(context, AppRoutes.silver);
-            },
-            backgroundColor: AppColors.silver,
-            foregroundColor: AppColors.black,
-          ),
-        ],
+              text: AppStrings.silver,
+              onPressed: () {
+                Navigator.pushNamed(context, AppRoutes.silver);
+              },
+              backgroundColor: AppColors.silver,
+              foregroundColor: AppColors.black,
+            ),
+          ],
+        ),
       ),
     );
   }

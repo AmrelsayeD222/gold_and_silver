@@ -5,6 +5,8 @@ class GoldView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Center(child: Text('Gold')));
+    return Scaffold(
+      body: Center(child: Text('Gold', style: TextStyle(fontSize: 20))),
+    );
   }
 }

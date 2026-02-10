@@ -5,6 +5,8 @@ class SilverView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Center(child: Text('Silver')));
+    return Scaffold(
+      body: Center(child: Text('Silver', style: TextStyle(fontSize: 20))),
+    );
   }
 }
