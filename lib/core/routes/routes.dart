@@ -1,4 +1,3 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gold_and_silver/core/network/services/api_service.dart';
@@ -14,7 +13,7 @@ import 'package:gold_and_silver/feature/silver/ui/view/silver_view.dart';
 
 class AppRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
-    final apiService = ApiServices(Dio());
+    final apiService = ApiServices();
     switch (settings.name) {
       case AppRoutes.home:
         return MaterialPageRoute(builder: (_) => const HomeView());

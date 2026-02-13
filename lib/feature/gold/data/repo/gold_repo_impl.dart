@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 import 'package:gold_and_silver/core/constants/app_constants.dart';
 import 'package:gold_and_silver/core/network/errors/failure.dart';
 import 'package:gold_and_silver/core/network/services/api_service.dart';
@@ -14,6 +15,9 @@ class GoldRepoImpl implements GoldRepo {
       final response = await apiServices.get(AppConstants.apiGoldUrl);
       return Right(GoldModel.fromJson(response));
     } catch (e) {
+      if (e is DioException) {
+        return Left(ServerFailure.fromDioError(e));
+      }
       return Left(ServerFailure(e.toString()));
     }
   }
